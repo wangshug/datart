@@ -1,6 +1,6 @@
 {
   "name": "datart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "",
   "repository": {
@@ -15,8 +15,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "bootstrap": "npm install --legacy-peer-deps",
-    "start": "craco start",
-    "build": "cross-env GENERATE_SOURCEMAP=false craco build",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider craco start",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider GENERATE_SOURCEMAP=false craco build",
     "build:task": "rollup -c",
     "build:all": "npm run build:theme && npm run build:task && npm run build",
     "build:theme": "node scripts/extractAntdTheme",
@@ -27,8 +27,8 @@
     "eslint": "eslint --ext js,ts,tsx",
     "lint": "npm run eslint src",
     "lint:fix": "npm run eslint --fix src",
-    "lint:css": "npx stylelint 'src/**/*.css'",
-    "lint:style": "npx stylelint 'src/**/*.{js,ts,jsx,tsx}'",
+    "lint:css": "npx stylelint \"src/**/*.css\"",
+    "lint:style": "npx stylelint \"src/**/*.{js,ts,jsx,tsx}\"",
     "prettify": "prettier --write src",
     "prepare": "cd .. && husky install frontend/.husky",
     "eject": "react-scripts eject",
@@ -100,6 +100,7 @@
     "antd": "4.16.13",
     "antd-theme-generator": "1.2.11",
     "axios": "^0.21.1",
+    "chokidar": "^3.5.3",
     "classnames": "^2.3.1",
     "currency.js": "^2.0.4",
     "debounce-promise": "3.1.2",

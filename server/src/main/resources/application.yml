@@ -4,6 +4,7 @@ spring:
 
   main:
     banner-mode: off
+    allow-circular-references: true
 
   servlet:
     multipart:
@@ -39,7 +40,6 @@ spring:
             instancName: DatartScheduleCluster
             instanceId: AUTO
           jobStore:
-            class: org.quartz.impl.jdbcjobstore.JobStoreTX
             driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
             isClustered: true
             clusterCheckinInterval: 5000
@@ -48,6 +48,9 @@ spring:
             class: org.quartz.simpl.SimpleThreadPool
             threadCount: 10
             threadPriority: 5
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 mybatis:
   type-aliases-package: datart.core.entity

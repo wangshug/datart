@@ -1,5 +1,9 @@
-FROM java:8
-LABEL "author"="tl"
+FROM alpine
+
+RUN apk update && \
+    apk upgrade
+RUN apk add openjdk8=8.345.01-r3
+
 RUN mkdir /datart
 COPY ./bin/ /datart/bin/
 COPY ./config/ /datart/config/

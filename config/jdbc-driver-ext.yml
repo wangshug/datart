@@ -37,3 +37,19 @@ DORIS:
   adapter-class: "datart.data.provider.jdbc.adapters.DorisDataProviderAdapter"
   url-prefix: "jdbc:mysql://"
 
+
+MONGO:
+  db-type: "mongo"
+  name: "mongo"
+  driver-class: "com.wisecoders.dbschema.mongodb.JdbcDriver"
+  literal-quote: "'"
+  identifier-quote: "`"
+  url-prefix: "jdbc:mongo://"
+
+MYSQL5:
+  db-type: "mysql5"
+  name: "mysql5"
+  driver-class: "com.mysql.cj.jdbc.Driver"
+  literal-quote: "'"
+  identifier-quote: "`"
+  url-prefix: "jdbc:mysql://"
